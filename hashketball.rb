@@ -195,7 +195,20 @@ def most_points_scored
 end
 
 def winning_team
-  
+point = []
+team1 = 0
+team2 = 0
+  game_hash[:home][:players].collect do |name, stats|
+    team1 += stats[:points]
+  end
+  game_hash[:away][:players].collect do |name, stats|
+    team2 += stats[:points]
+  end
+  if team1 < team2
+    return game_hash[:home][:team_name]
+  else
+    return game_hash[:away][:team_name]
+  end
 end
 
 def player_with_longest_name
