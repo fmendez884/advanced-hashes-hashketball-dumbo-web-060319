@@ -210,18 +210,12 @@ def player_with_longest_name
 end
 
 def long_name_steals_a_ton?
-  stealy = nil
   steals = players.collect do |name, stats|
     stats[:steals]
   end
   players.collect do |name, stats|
-    if stats[:steals] == steals.max
-      stealy = name
+    if stats[:steals] == steals.max && name == player_with_longest_name
+      return true
     end
-  end
-  if player_with_longest_name == stealy
-    return true
-  else 
-    return false
   end
 end
