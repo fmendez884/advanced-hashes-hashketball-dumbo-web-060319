@@ -204,7 +204,7 @@ team2 = 0
   game_hash[:away][:players].collect do |name, stats|
     team2 += stats[:points]
   end
-  if team1 < team2
+  if team1 > team2
     return game_hash[:home][:team_name]
   else
     return game_hash[:away][:team_name]
