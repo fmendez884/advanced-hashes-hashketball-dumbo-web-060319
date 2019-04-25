@@ -199,7 +199,14 @@ def winning_team
 end
 
 def player_with_longest_name
-  
+  name_length = players.collect do |name, stats|
+    name.length
+  end
+  players.collect do |name, stats|
+    if name.length == name_length.max
+      return name
+    end
+  end
 end
 
 def long_name_steals_a_ton?
