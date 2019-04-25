@@ -174,7 +174,7 @@ end
 
 def big_shoe_rebounds
   shoes = players.collect do |name, stats|
-    players[name][:shoe]
+    stats[:shoe]
   end
   players.collect do |name, stats|
     if players[name][:shoe] == shoes.max
@@ -185,12 +185,12 @@ end
 
 def most_points_scored
   points = players.collect do |name, stats|
-    players[name][:points]
+    stats[:points]
   end
-  players.collect do |name, stats|
-    if players[name][:points] == points.max
-      return players
+   players.collect do |name, stats|
+    if stats[:points] == points.max
+      return name
     end
-  end
+   end
 end
 
