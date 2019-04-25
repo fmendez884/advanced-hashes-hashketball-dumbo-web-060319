@@ -213,7 +213,7 @@ def long_name_steals_a_ton?
       stealy.push(name)
     end
   end
-  if dude == stealy
+  if player_with == stealy
     return true
   else 
     return dude
